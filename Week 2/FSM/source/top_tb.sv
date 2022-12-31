@@ -1,3 +1,5 @@
+`include "top.v"
+
 module tb; 
     reg clk, reset_n, rx_start, data_in; 
     wire frame_error; 
@@ -14,15 +16,15 @@ module tb;
     end
 
     initial begin
-        @(negedge clk)
+        @(negedge clk);
         reset_n = 0; 
-        @(negedge clk)
+        @(negedge clk);
         reset_n = 1; 
 
         rx_start = 1; 
         repeat(20) begin
             data_in = $random; 
-            @(negedge clk)
+            @(negedge clk);
         end
 
         #10

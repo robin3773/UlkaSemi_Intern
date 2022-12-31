@@ -1,3 +1,8 @@
+`include "comparator.v"
+`include "controller.v"
+`include "counter.v"
+`include "shift_register.v"
+
 module top(
     input clk, 
     input reset_n, 
@@ -6,7 +11,7 @@ module top(
     output frame_error
 ); 
 
-    wire clk_count, bit_count; 
+    wire [2:0] clk_count, bit_count; 
     wire [4:0] data_out; 
 
     counter clk_counter(
@@ -35,13 +40,13 @@ module top(
 
     comparator clk_cmp(
         .value1(clk_count), 
-        .value2(5), 
+        .value2(3'b100), 
         .is_equal(clk_count_eq_5)
     ); 
 
     comparator bit_cmp(
         .value1(bit_count), 
-        .value2(5), 
+        .value2(3'b100), 
         .is_equal(bit_count_eq_5)
     ); 
 
