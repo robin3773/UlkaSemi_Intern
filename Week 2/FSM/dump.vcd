@@ -1,0 +1,633 @@
+$date
+	Sat Jan 07 02:16:10 2023
+$end
+$version
+	ModelSim Version 2020.1
+$end
+$timescale
+	1ns
+$end
+
+$scope module tb $end
+$var reg 1 ! clk $end
+$var reg 1 " reset_n $end
+$var reg 1 # rx_start $end
+$var reg 1 $ data_in $end
+$var wire 1 % frame_error $end
+
+$scope module DUT $end
+$var wire 1 & clk $end
+$var wire 1 ' reset_n $end
+$var wire 1 ( rx_start $end
+$var wire 1 ) data_in $end
+$var wire 1 % frame_error $end
+$var wire 1 * clk_count [2] $end
+$var wire 1 + clk_count [1] $end
+$var wire 1 , clk_count [0] $end
+$var wire 1 - bit_count [2] $end
+$var wire 1 . bit_count [1] $end
+$var wire 1 / bit_count [0] $end
+$var wire 1 0 data_out [4] $end
+$var wire 1 1 data_out [3] $end
+$var wire 1 2 data_out [2] $end
+$var wire 1 3 data_out [1] $end
+$var wire 1 4 data_out [0] $end
+$var wire 1 5 clk_clear $end
+$var wire 1 6 clk_increament $end
+$var wire 1 7 bit_clear $end
+$var wire 1 8 bit_increament $end
+$var wire 1 9 shift_en $end
+$var wire 1 : clk_count_eq_5 $end
+$var wire 1 ; bit_count_eq_5 $end
+$var wire 1 < frame_error_gen $end
+
+$scope module clk_counter $end
+$var wire 1 & clk $end
+$var wire 1 ' reset_n $end
+$var wire 1 5 clear $end
+$var wire 1 6 increament $end
+$var reg 3 = count [2:0] $end
+$upscope $end
+
+$scope module bit_counter $end
+$var wire 1 & clk $end
+$var wire 1 ' reset_n $end
+$var wire 1 7 clear $end
+$var wire 1 8 increament $end
+$var reg 3 > count [2:0] $end
+$upscope $end
+
+$scope module shift $end
+$var parameter 32 ? DATA_WIDTH $end
+$var wire 1 & clk $end
+$var wire 1 ' reset_n $end
+$var wire 1 9 shift_en $end
+$var wire 1 ) data_in $end
+$var reg 5 @ data_out [4:0] $end
+$upscope $end
+
+$scope module clk_cmp $end
+$var parameter 32 A VALUE_WIDTH $end
+$var wire 1 * value1 [2] $end
+$var wire 1 + value1 [1] $end
+$var wire 1 , value1 [0] $end
+$var wire 1 B value2 [2] $end
+$var wire 1 C value2 [1] $end
+$var wire 1 D value2 [0] $end
+$var reg 1 E is_equal $end
+$upscope $end
+
+$scope module bit_cmp $end
+$var parameter 32 F VALUE_WIDTH $end
+$var wire 1 - value1 [2] $end
+$var wire 1 . value1 [1] $end
+$var wire 1 / value1 [0] $end
+$var wire 1 G value2 [2] $end
+$var wire 1 H value2 [1] $end
+$var wire 1 I value2 [0] $end
+$var reg 1 J is_equal $end
+$upscope $end
+
+$scope module controller $end
+$var parameter 2 K IDLE $end
+$var parameter 2 L WAIT $end
+$var parameter 2 M SAMPLE $end
+$var parameter 2 N CHECK $end
+$var wire 1 & clk $end
+$var wire 1 ' reset_n $end
+$var wire 1 ( rx_start $end
+$var wire 1 : clk_count_eq_5 $end
+$var wire 1 ; bit_count_eq_5 $end
+$var reg 1 O frame_error_gen $end
+$var reg 1 P shift_en $end
+$var reg 1 Q clk_clear $end
+$var reg 1 R clk_increament $end
+$var reg 1 S bit_clear $end
+$var reg 1 T bit_increament $end
+$var reg 3 U present_state [2:0] $end
+$var reg 3 V next_state [2:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+
+$scope begin std $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0!
+1"
+0#
+x$
+bx =
+bx >
+bx @
+0E
+0J
+xO
+xP
+xQ
+xR
+xS
+xT
+bx U
+bx V
+b101 ?
+b11 A
+b11 F
+b0 K
+b1 L
+b10 M
+b11 N
+x%
+x,
+x+
+x*
+x/
+x.
+x-
+x4
+x3
+x2
+x1
+x0
+x5
+x6
+x7
+x8
+x9
+0:
+0;
+x<
+0&
+1'
+0(
+x)
+0I
+0H
+1G
+0D
+0C
+1B
+$end
+#5
+1!
+1&
+#10
+0!
+0&
+0"
+0'
+b0 =
+b0 >
+b0 @
+b0 U
+04
+03
+02
+01
+00
+0/
+0.
+0-
+0,
+0+
+0*
+b0 V
+0O
+0P
+1Q
+1R
+1S
+0T
+0<
+09
+15
+16
+17
+08
+0%
+#15
+1!
+1&
+#20
+0!
+0&
+1"
+1#
+0$
+0)
+1'
+1(
+b1 V
+#25
+1!
+1&
+1$
+1)
+b1 U
+0Q
+0S
+05
+07
+#30
+0!
+0&
+#35
+1!
+1&
+b1 =
+1,
+#40
+0!
+0&
+#45
+1!
+1&
+b10 =
+0,
+1+
+#50
+0!
+0&
+#55
+1!
+1&
+b11 =
+1,
+#60
+0!
+0&
+#65
+1!
+1&
+b100 =
+0,
+0+
+1*
+1E
+1:
+b10 V
+1Q
+15
+#70
+0!
+0&
+#75
+1!
+1&
+b0 =
+b10 U
+0*
+0E
+b1 V
+1P
+1T
+19
+18
+0:
+0Q
+05
+#80
+0!
+0&
+#85
+1!
+1&
+0$
+0)
+b1 =
+b1 >
+b10000 @
+b1 U
+10
+1/
+1,
+0P
+0T
+09
+08
+#90
+0!
+0&
+#95
+1!
+1&
+1$
+1)
+b10 =
+0,
+1+
+#100
+0!
+0&
+#105
+1!
+1&
+b11 =
+1,
+#110
+0!
+0&
+#115
+1!
+1&
+0$
+0)
+b100 =
+0,
+0+
+1*
+1E
+1:
+b10 V
+1Q
+15
+#120
+0!
+0&
+#125
+1!
+1&
+1$
+1)
+b0 =
+b10 U
+0*
+0E
+b1 V
+1P
+1T
+19
+18
+0:
+0Q
+05
+#130
+0!
+0&
+#135
+1!
+1&
+b1 =
+b10 >
+b11000 @
+b1 U
+11
+0/
+1.
+1,
+0P
+0T
+09
+08
+#140
+0!
+0&
+#145
+1!
+1&
+0$
+0)
+b10 =
+0,
+1+
+#150
+0!
+0&
+#155
+1!
+1&
+1$
+1)
+b11 =
+1,
+#160
+0!
+0&
+#165
+1!
+1&
+0$
+0)
+b100 =
+0,
+0+
+1*
+1E
+1:
+b10 V
+1Q
+15
+#170
+0!
+0&
+#175
+1!
+1&
+1$
+1)
+b0 =
+b10 U
+0*
+0E
+b1 V
+1P
+1T
+19
+18
+0:
+0Q
+05
+#180
+0!
+0&
+#185
+1!
+1&
+0$
+0)
+b1 =
+b11 >
+b11100 @
+b1 U
+12
+1/
+1,
+0P
+0T
+09
+08
+#190
+0!
+0&
+#195
+1!
+1&
+1$
+1)
+b10 =
+0,
+1+
+#200
+0!
+0&
+#205
+1!
+1&
+b11 =
+1,
+#210
+0!
+0&
+#215
+1!
+1&
+0$
+0)
+b100 =
+0,
+0+
+1*
+1E
+1:
+b10 V
+1Q
+15
+#220
+0!
+0&
+#225
+1!
+1&
+1$
+1)
+b0 =
+b10 U
+0*
+0E
+b1 V
+1P
+1T
+19
+18
+0:
+0Q
+05
+#230
+0!
+0&
+#235
+1!
+1&
+0$
+0)
+b1 =
+b100 >
+b11110 @
+b1 U
+13
+0/
+0.
+1-
+1,
+1J
+0P
+0T
+09
+08
+1;
+1S
+17
+#240
+0!
+0&
+#245
+1!
+1&
+b10 =
+b0 >
+0-
+0,
+1+
+0J
+0;
+0S
+07
+#250
+0!
+0&
+#255
+1!
+1&
+b11 =
+1,
+#260
+0!
+0&
+#265
+1!
+1&
+1$
+1)
+b100 =
+0,
+0+
+1*
+1E
+1:
+b10 V
+1Q
+15
+#270
+0!
+0&
+#275
+1!
+1&
+0$
+0)
+b0 =
+b10 U
+0*
+0E
+b1 V
+1P
+1T
+19
+18
+0:
+0Q
+05
+#280
+0!
+0&
+#285
+1!
+1&
+1$
+1)
+b1 =
+b1 >
+b1111 @
+b1 U
+14
+00
+1/
+1,
+0P
+0T
+09
+08
+#290
+0!
+0&
+#295
+1!
+1&
+b10 =
+0,
+1+
+#300
+0!
+0&

@@ -1,0 +1,186 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/Robin/Documents/GitHub/UlkaSemi_Intern/Week 2/FSM
+vcomparator
+Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
+Z2 !s110 1673038532
+!i10b 1
+!s100 BW;z=EIfNMDXag:Lje_zL3
+Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
+I8R^1JSiUkZOOiMH>OIF^10
+Z4 VDg1SIo80bB@j0V0VzS_@n1
+S1
+R0
+w1672518542
+8C:\Users\Robin\Documents\GitHub\UlkaSemi_Intern\Week 2\FSM\source\comparator.v
+FC:\Users\Robin\Documents\GitHub\UlkaSemi_Intern\Week 2\FSM\source\comparator.v
+!i122 41
+L0 1 11
+Z5 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z6 !s108 1673038532.000000
+!s107 C:\Users\Robin\Documents\GitHub\UlkaSemi_Intern\Week 2\FSM\source\shift_register.v|C:\Users\Robin\Documents\GitHub\UlkaSemi_Intern\Week 2\FSM\source\counter.v|C:\Users\Robin\Documents\GitHub\UlkaSemi_Intern\Week 2\FSM\source\controller.v|C:\Users\Robin\Documents\GitHub\UlkaSemi_Intern\Week 2\FSM\source\comparator.v|C:\Users\Robin\Documents\GitHub\UlkaSemi_Intern\Week 2\FSM\source\top.v|C:/Users/Robin/Documents/GitHub/UlkaSemi_Intern/Week 2/FSM/source/top_tb.sv|
+Z7 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Robin/Documents/GitHub/UlkaSemi_Intern/Week 2/FSM/source/top_tb.sv|
+!i113 1
+Z8 o-work work -sv
+Z9 tCvgOpt 0
+vcontroller
+R1
+R2
+!i10b 1
+!s100 ?Xn]VGikKbbY8TbKY21al0
+R3
+Ijg^g>Qa1E37[<e1hzmdB62
+R4
+S1
+R0
+w1673038442
+8C:\Users\Robin\Documents\GitHub\UlkaSemi_Intern\Week 2\FSM\source\controller.v
+FC:\Users\Robin\Documents\GitHub\UlkaSemi_Intern\Week 2\FSM\source\controller.v
+!i122 41
+L0 1 79
+R5
+r1
+!s85 0
+31
+R6
+Z10 !s107 C:\Users\Robin\Documents\GitHub\UlkaSemi_Intern\Week 2\FSM\source\shift_register.v|C:\Users\Robin\Documents\GitHub\UlkaSemi_Intern\Week 2\FSM\source\counter.v|C:\Users\Robin\Documents\GitHub\UlkaSemi_Intern\Week 2\FSM\source\controller.v|C:\Users\Robin\Documents\GitHub\UlkaSemi_Intern\Week 2\FSM\source\comparator.v|C:\Users\Robin\Documents\GitHub\UlkaSemi_Intern\Week 2\FSM\source\top.v|C:/Users/Robin/Documents/GitHub/UlkaSemi_Intern/Week 2/FSM/source/top_tb.sv|
+R7
+!i113 1
+R8
+R9
+vcounter
+R1
+R2
+!i10b 1
+!s100 YVc6XQK?ZUiQBa52aM=nG1
+R3
+IQZUcnPJMS^EeMnYGgXReA0
+R4
+S1
+R0
+w1673026042
+8C:\Users\Robin\Documents\GitHub\UlkaSemi_Intern\Week 2\FSM\source\counter.v
+FC:\Users\Robin\Documents\GitHub\UlkaSemi_Intern\Week 2\FSM\source\counter.v
+!i122 41
+L0 1 18
+R5
+r1
+!s85 0
+31
+R6
+R10
+R7
+!i113 1
+R8
+R9
+vshift_register
+R1
+R2
+!i10b 1
+!s100 kHjKU]HUf3:YD6K553VVf1
+R3
+I9Y5KJ[Eob86d8Y<lN0?hN3
+R4
+S1
+R0
+w1672518572
+8C:\Users\Robin\Documents\GitHub\UlkaSemi_Intern\Week 2\FSM\source\shift_register.v
+FC:\Users\Robin\Documents\GitHub\UlkaSemi_Intern\Week 2\FSM\source\shift_register.v
+!i122 41
+L0 1 17
+R5
+r1
+!s85 0
+31
+R6
+R10
+R7
+!i113 1
+R8
+R9
+vshift_register_tb
+R1
+!s110 1673034426
+!i10b 1
+!s100 5mJ71;?]YQIhG:7J?]:GH1
+R3
+IVV2JL@FcGJLOCoYMzFUdP1
+R4
+S1
+R0
+w1673031935
+8C:/Users/Robin/Documents/GitHub/UlkaSemi_Intern/Week 2/FSM/source/shift_register_tb.sv
+FC:/Users/Robin/Documents/GitHub/UlkaSemi_Intern/Week 2/FSM/source/shift_register_tb.sv
+!i122 5
+L0 2 56
+R5
+r1
+!s85 0
+31
+!s108 1673034426.000000
+!s107 C:\Users\Robin\Documents\GitHub\UlkaSemi_Intern\Week 2\FSM\source\shift_register.v|C:/Users/Robin/Documents/GitHub/UlkaSemi_Intern/Week 2/FSM/source/shift_register_tb.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Robin/Documents/GitHub/UlkaSemi_Intern/Week 2/FSM/source/shift_register_tb.sv|
+!i113 1
+R8
+R9
+vtb
+R1
+R2
+!i10b 1
+!s100 bigF6cbKYL^dGDa06^BAH3
+R3
+IDXISEJ0;_aGQPhBNoWa5P1
+R4
+S1
+R0
+w1673036417
+8C:/Users/Robin/Documents/GitHub/UlkaSemi_Intern/Week 2/FSM/source/top_tb.sv
+FC:/Users/Robin/Documents/GitHub/UlkaSemi_Intern/Week 2/FSM/source/top_tb.sv
+!i122 41
+L0 3 46
+R5
+r1
+!s85 0
+31
+R6
+R10
+R7
+!i113 1
+R8
+R9
+vtop
+R1
+R2
+!i10b 1
+!s100 a<h9F[[5R`5D71:cIN3^_3
+R3
+I@kHhlOegeFYV9I^RlL>]=1
+R4
+S1
+R0
+w1672524255
+8C:\Users\Robin\Documents\GitHub\UlkaSemi_Intern\Week 2\FSM\source\top.v
+FC:\Users\Robin\Documents\GitHub\UlkaSemi_Intern\Week 2\FSM\source\top.v
+!i122 41
+L0 6 66
+R5
+r1
+!s85 0
+31
+R6
+R10
+R7
+!i113 1
+R8
+R9

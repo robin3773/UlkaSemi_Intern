@@ -1,0 +1,33 @@
+{C:/Users/Robin/Documents/GitHub/UlkaSemi_Intern/Week 2/FSM/source/comparator.v} {1 {vlog -work work -stats=none {C:/Users/Robin/Documents/GitHub/UlkaSemi_Intern/Week 2/FSM/source/comparator.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module comparator
+
+Top level modules:
+	comparator
+
+} {} {}} {C:/Users/Robin/Documents/GitHub/UlkaSemi_Intern/Week 2/FSM/source/counter.v} {1 {vlog -work work -stats=none {C:/Users/Robin/Documents/GitHub/UlkaSemi_Intern/Week 2/FSM/source/counter.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module counter
+
+Top level modules:
+	counter
+
+} {} {}} {C:/Users/Robin/Documents/GitHub/UlkaSemi_Intern/Week 2/FSM/source/shift_register.v} {1 {vlog -work work -stats=none {C:/Users/Robin/Documents/GitHub/UlkaSemi_Intern/Week 2/FSM/source/shift_register.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module shift_register
+
+Top level modules:
+	shift_register
+
+} {} {}} {C:/Users/Robin/Documents/GitHub/UlkaSemi_Intern/Week 2/FSM/source/top.v} {1 {vlog -work work -stats=none {C:/Users/Robin/Documents/GitHub/UlkaSemi_Intern/Week 2/FSM/source/top.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module comparator
+-- Compiling module controller
+-- Compiling module counter
+-- Compiling module shift_register
+-- Compiling module top
+
+Top level modules:
+	top
+
+} {} {}}

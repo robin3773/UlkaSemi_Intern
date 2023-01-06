@@ -1,0 +1,44 @@
+# Compile of shift_register.v was successful.
+# Compile of comparator.v was successful.
+# Compile of controller.v was successful.
+# Compile of counter.v was successful.
+# Compile of top.v was successful.
+# Compile of top_tb.sv was successful.
+# 6 compiles, 0 failed with no errors.
+vsim -gui work.tb
+# vsim -gui work.tb 
+# Start time: 02:55:47 on Jan 07,2023
+# Loading sv_std.std
+# Loading work.tb
+# Loading work.top
+# Loading work.counter
+# Loading work.shift_register
+# Loading work.comparator
+# Loading work.controller
+add wave -position insertpoint  \
+sim:/tb/DUT/clk \
+sim:/tb/DUT/reset_n \
+sim:/tb/DUT/rx_start \
+sim:/tb/DUT/data_in \
+sim:/tb/DUT/frame_error \
+sim:/tb/DUT/clk_count \
+sim:/tb/DUT/bit_count \
+sim:/tb/DUT/data_out \
+sim:/tb/DUT/clk_clear \
+sim:/tb/DUT/clk_increament \
+sim:/tb/DUT/bit_clear \
+sim:/tb/DUT/bit_increament \
+sim:/tb/DUT/shift_en \
+sim:/tb/DUT/clk_count_eq_5 \
+sim:/tb/DUT/bit_count_eq_5 \
+sim:/tb/DUT/frame_error_gen
+run
+run
+add wave -position end  sim:/tb/DUT/controller/present_state
+restart
+# Closing VCD file "top.vcd"
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+run
+run
+run
+run

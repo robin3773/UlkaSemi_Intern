@@ -11,7 +11,7 @@ module counter(
             count <= 0; 
         end 
         else begin
-            count <= clear ? 1'b0 : count + 1; 
+            count <= clear ? 1'b0 : count + increament; 
         end 
     end
 
