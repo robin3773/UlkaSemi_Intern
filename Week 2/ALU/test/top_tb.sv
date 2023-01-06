@@ -27,7 +27,6 @@ module top_tb;
     end
 
     initial begin
-        //repeat (20) begin
         a = $random; 
         b = $random; 
         instruction = {funct, a, b, opcode};

@@ -3,7 +3,6 @@ module controller(
     input reset_n, 
     input start, 
     
-    output reg shift_en_in, shift_en_out,  
     output reg exec_en, 
     output reg rvalid
 ); 
@@ -30,26 +29,18 @@ module controller(
         begin: OL
             case(present_state)
                 IDLE: begin
-                    shift_en_in = 0; 
-                    shift_en_out = 0; 
                     rvalid = 0; 
                     exec_en = 0; 
                 end
                 LOAD: begin
-                    shift_en_in = 1; 
-                    shift_en_out = 0; 
                     rvalid = 0; 
                     exec_en = 0; 
                 end 
                 EXECUTE: begin
-                    shift_en_in = 0; 
-                    shift_en_out = 1;
                     rvalid = 0; 
                     exec_en = 1; 
                 end 
                 MEM_WRITE: begin
-                    shift_en_in = 0; 
-                    shift_en_out = 0;
                     rvalid = 1; 
                     exec_en = 0; 
                 end 

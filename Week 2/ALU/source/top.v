@@ -19,47 +19,23 @@ module top #(parameter INSTR_LENGTH = 12)(
     wire rvalid;  
     wire [4:0] result_out;
 
-    initial begin
-        repeat (20) begin
-            //$display("[%0t] Result = %b", $time, result); 
-            @(posedge clk);
-        end
-    end
-
-    shift_reg INPUT_REGISTER(
-        .clk(clk), 
-        .reset_n(reset_n), 
-        .shift_en(shift_en_in), 
-        .data_in_p(instruction), 
-        .data_out_p(data_out)
-    ); 
-
-    shift_reg  #(.DATA_LENGTH(5)) OUTPUT_REGISTER (
-        .clk(clk), 
-        .reset_n(reset_n), 
-        .shift_en(shift_en_out),
-        .data_in_p({in_cb, in_result}), 
-        .data_out_p(result_out)
-    );
 
     controller CONTROL(
         .clk(clk), 
         .reset_n(reset_n), 
         .start(start), 
-        .shift_en_in(shift_en_in), 
-        .shift_en_out(shift_en_out),
         .exec_en(exec_en), 
         .rvalid(rvalid)
     ); 
 
     alu ALU(
-        .a(data_out[10:7]), 
-        .b(data_out[6:3]), 
-        .opcode(data_out[2:0]), 
-        .funct(data_out[11]),
+        .a(instruction[10:7]), 
+        .b(instruction[6:3]), 
+        .opcode(instruction[2:0]), 
+        .funct(instruction[11]),
         .exec_en(exec_en),
-        .out(in_result),
-        .cb(in_cb)
+        .out(result),
+        .cb(cb)
     ); 
 
     assign result = result_out[3:0]; 
