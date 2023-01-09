@@ -1,0 +1,795 @@
+$date
+	Tue Jan 10 02:33:34 2023
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module tb $end
+$var wire 1 ! yellow_on $end
+$var wire 1 " red_on $end
+$var wire 1 # green_on $end
+$var reg 1 $ clk $end
+$var reg 1 % reset_n $end
+$var reg 1 & start $end
+$scope module DUT $end
+$var wire 1 $ clk $end
+$var wire 1 # green_on $end
+$var wire 1 " red_on $end
+$var wire 1 % reset_n $end
+$var wire 1 & start $end
+$var wire 1 ! yellow_on $end
+$var wire 1 ' yellow_en $end
+$var wire 1 ( red_en $end
+$var wire 1 ) increament $end
+$var wire 1 * green_en $end
+$var wire 4 + count [3:0] $end
+$var wire 1 , clk_count_eq_5 $end
+$var wire 1 - clk_count_eq_3 $end
+$var wire 1 . clk_count_eq_11 $end
+$var wire 1 / clk_count_eq_10 $end
+$var wire 1 0 clear $end
+$scope module COMPARE10 $end
+$var wire 4 1 value2 [3:0] $end
+$var wire 4 2 value1 [3:0] $end
+$var wire 1 / is_equal $end
+$var parameter 32 3 BIT_LENGTH $end
+$upscope $end
+$scope module COMPARE11 $end
+$var wire 4 4 value2 [3:0] $end
+$var wire 4 5 value1 [3:0] $end
+$var wire 1 . is_equal $end
+$var parameter 32 6 BIT_LENGTH $end
+$upscope $end
+$scope module COMPARE3 $end
+$var wire 4 7 value2 [3:0] $end
+$var wire 4 8 value1 [3:0] $end
+$var wire 1 - is_equal $end
+$var parameter 32 9 BIT_LENGTH $end
+$upscope $end
+$scope module COMPARE5 $end
+$var wire 4 : value2 [3:0] $end
+$var wire 4 ; value1 [3:0] $end
+$var wire 1 , is_equal $end
+$var parameter 32 < BIT_LENGTH $end
+$upscope $end
+$scope module CONTROL $end
+$var wire 1 $ clk $end
+$var wire 1 / clk_count_eq_10 $end
+$var wire 1 . clk_count_eq_11 $end
+$var wire 1 - clk_count_eq_3 $end
+$var wire 1 , clk_count_eq_5 $end
+$var wire 1 % reset_n $end
+$var wire 1 & start $end
+$var parameter 2 = GREEN $end
+$var parameter 2 > IDLE $end
+$var parameter 2 ? RED $end
+$var parameter 2 @ YELLOW $end
+$var reg 1 0 clear $end
+$var reg 1 * green_en $end
+$var reg 1 ) increament $end
+$var reg 2 A next_state [1:0] $end
+$var reg 2 B present_state [1:0] $end
+$var reg 1 ( red_en $end
+$var reg 1 ' yellow_en $end
+$scope begin NSL $end
+$upscope $end
+$scope begin OL $end
+$upscope $end
+$upscope $end
+$scope module COUNTER $end
+$var wire 1 0 clear $end
+$var wire 1 $ clk $end
+$var wire 1 ) increament $end
+$var wire 1 % reset_n $end
+$var parameter 32 C BIT_LENGTH $end
+$var reg 4 D count [3:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+b100 C
+b10 @
+b1 ?
+b0 >
+b11 =
+b100 <
+b100 9
+b100 6
+b100 3
+$end
+#0
+$dumpvars
+bx D
+bx B
+bx A
+bx ;
+b100 :
+bx 8
+b10 7
+bx 5
+b1010 4
+bx 2
+b1001 1
+x0
+x/
+x.
+x-
+x,
+bx +
+x*
+x)
+x(
+x'
+0&
+1%
+0$
+x#
+x"
+x!
+$end
+#5
+0)
+10
+0"
+0(
+0#
+0*
+0!
+0'
+b0 A
+0,
+0-
+0.
+0/
+b0 +
+b0 2
+b0 5
+b0 8
+b0 ;
+b0 D
+b0 B
+0%
+1$
+#10
+0$
+#15
+1%
+1$
+#20
+0$
+#25
+b1 A
+1&
+1$
+#30
+0$
+#35
+1)
+00
+1"
+1(
+b1 B
+1$
+#40
+0$
+#45
+b1 +
+b1 2
+b1 5
+b1 8
+b1 ;
+b1 D
+1$
+#50
+0$
+#55
+b10 A
+1-
+b10 +
+b10 2
+b10 5
+b10 8
+b10 ;
+b10 D
+1$
+#60
+0$
+#65
+0"
+0(
+1!
+1'
+0-
+b11 +
+b11 2
+b11 5
+b11 8
+b11 ;
+b11 D
+b10 B
+1$
+#70
+0$
+#75
+b11 A
+1,
+b100 +
+b100 2
+b100 5
+b100 8
+b100 ;
+b100 D
+1$
+#80
+0$
+#85
+1#
+1*
+0!
+0'
+0,
+b101 +
+b101 2
+b101 5
+b101 8
+b101 ;
+b101 D
+b11 B
+1$
+#90
+0$
+#95
+b110 +
+b110 2
+b110 5
+b110 8
+b110 ;
+b110 D
+1$
+#100
+0$
+#105
+b111 +
+b111 2
+b111 5
+b111 8
+b111 ;
+b111 D
+1$
+#110
+0$
+#115
+b1000 +
+b1000 2
+b1000 5
+b1000 8
+b1000 ;
+b1000 D
+1$
+#120
+0$
+#125
+b1 A
+1/
+b1001 +
+b1001 2
+b1001 5
+b1001 8
+b1001 ;
+b1001 D
+1$
+#130
+0$
+#135
+10
+1"
+1(
+0#
+0*
+b1 B
+1.
+0/
+b1010 +
+b1010 2
+b1010 5
+b1010 8
+b1010 ;
+b1010 D
+1$
+#140
+0$
+#145
+00
+0.
+b0 +
+b0 2
+b0 5
+b0 8
+b0 ;
+b0 D
+1$
+#150
+0$
+#155
+b1 +
+b1 2
+b1 5
+b1 8
+b1 ;
+b1 D
+1$
+#160
+0$
+#165
+b10 A
+1-
+b10 +
+b10 2
+b10 5
+b10 8
+b10 ;
+b10 D
+1$
+#170
+0$
+#175
+0"
+0(
+1!
+1'
+b10 B
+0-
+b11 +
+b11 2
+b11 5
+b11 8
+b11 ;
+b11 D
+1$
+#180
+0$
+#185
+b11 A
+1,
+b100 +
+b100 2
+b100 5
+b100 8
+b100 ;
+b100 D
+1$
+#190
+0$
+#195
+1#
+1*
+0!
+0'
+b11 B
+0,
+b101 +
+b101 2
+b101 5
+b101 8
+b101 ;
+b101 D
+1$
+#200
+0$
+#205
+b110 +
+b110 2
+b110 5
+b110 8
+b110 ;
+b110 D
+1$
+#210
+0$
+#215
+b111 +
+b111 2
+b111 5
+b111 8
+b111 ;
+b111 D
+1$
+#220
+0$
+#225
+b1000 +
+b1000 2
+b1000 5
+b1000 8
+b1000 ;
+b1000 D
+1$
+#230
+0$
+#235
+b1 A
+1/
+b1001 +
+b1001 2
+b1001 5
+b1001 8
+b1001 ;
+b1001 D
+1$
+#240
+0$
+#245
+10
+1"
+1(
+0#
+0*
+1.
+0/
+b1010 +
+b1010 2
+b1010 5
+b1010 8
+b1010 ;
+b1010 D
+b1 B
+1$
+#250
+0$
+#255
+00
+0.
+b0 +
+b0 2
+b0 5
+b0 8
+b0 ;
+b0 D
+1$
+#260
+0$
+#265
+b1 +
+b1 2
+b1 5
+b1 8
+b1 ;
+b1 D
+1$
+#270
+0$
+#275
+b10 A
+1-
+b10 +
+b10 2
+b10 5
+b10 8
+b10 ;
+b10 D
+1$
+#280
+0$
+#285
+0"
+0(
+1!
+1'
+0-
+b11 +
+b11 2
+b11 5
+b11 8
+b11 ;
+b11 D
+b10 B
+1$
+#290
+0$
+#295
+b11 A
+1,
+b100 +
+b100 2
+b100 5
+b100 8
+b100 ;
+b100 D
+1$
+#300
+0$
+#305
+1#
+1*
+0!
+0'
+0,
+b101 +
+b101 2
+b101 5
+b101 8
+b101 ;
+b101 D
+b11 B
+1$
+#310
+0$
+#315
+b110 +
+b110 2
+b110 5
+b110 8
+b110 ;
+b110 D
+1$
+#320
+0$
+#325
+b111 +
+b111 2
+b111 5
+b111 8
+b111 ;
+b111 D
+1$
+#330
+0$
+#335
+b1000 +
+b1000 2
+b1000 5
+b1000 8
+b1000 ;
+b1000 D
+1$
+#340
+0$
+#345
+b1 A
+1/
+b1001 +
+b1001 2
+b1001 5
+b1001 8
+b1001 ;
+b1001 D
+1$
+#350
+0$
+#355
+10
+1"
+1(
+0#
+0*
+b1 B
+1.
+0/
+b1010 +
+b1010 2
+b1010 5
+b1010 8
+b1010 ;
+b1010 D
+1$
+#360
+0$
+#365
+00
+0.
+b0 +
+b0 2
+b0 5
+b0 8
+b0 ;
+b0 D
+1$
+#370
+0$
+#375
+b1 +
+b1 2
+b1 5
+b1 8
+b1 ;
+b1 D
+1$
+#380
+0$
+#385
+b10 A
+1-
+b10 +
+b10 2
+b10 5
+b10 8
+b10 ;
+b10 D
+1$
+#390
+0$
+#395
+0"
+0(
+1!
+1'
+b10 B
+0-
+b11 +
+b11 2
+b11 5
+b11 8
+b11 ;
+b11 D
+1$
+#400
+0$
+#405
+b11 A
+1,
+b100 +
+b100 2
+b100 5
+b100 8
+b100 ;
+b100 D
+1$
+#410
+0$
+#415
+1#
+1*
+0!
+0'
+b11 B
+0,
+b101 +
+b101 2
+b101 5
+b101 8
+b101 ;
+b101 D
+1$
+#420
+0$
+#425
+b110 +
+b110 2
+b110 5
+b110 8
+b110 ;
+b110 D
+1$
+#430
+0$
+#435
+b111 +
+b111 2
+b111 5
+b111 8
+b111 ;
+b111 D
+1$
+#440
+0$
+#445
+b1000 +
+b1000 2
+b1000 5
+b1000 8
+b1000 ;
+b1000 D
+1$
+#450
+0$
+#455
+b1 A
+1/
+b1001 +
+b1001 2
+b1001 5
+b1001 8
+b1001 ;
+b1001 D
+1$
+#460
+0$
+#465
+10
+1"
+1(
+0#
+0*
+1.
+0/
+b1010 +
+b1010 2
+b1010 5
+b1010 8
+b1010 ;
+b1010 D
+b1 B
+1$
+#470
+0$
+#475
+00
+0.
+b0 +
+b0 2
+b0 5
+b0 8
+b0 ;
+b0 D
+1$
+#480
+0$
+#485
+b1 +
+b1 2
+b1 5
+b1 8
+b1 ;
+b1 D
+1$
+#490
+0$
+#495
+b10 A
+1-
+b10 +
+b10 2
+b10 5
+b10 8
+b10 ;
+b10 D
+1$
+#500
+0$
+#505
+0"
+0(
+1!
+1'
+0-
+b11 +
+b11 2
+b11 5
+b11 8
+b11 ;
+b11 D
+b10 B
+1$
+#510
+0$
+#515
+b11 A
+1,
+b100 +
+b100 2
+b100 5
+b100 8
+b100 ;
+b100 D
+1$
+#520
+0$
+#525
+1#
+1*
+0!
+0'
+0,
+b101 +
+b101 2
+b101 5
+b101 8
+b101 ;
+b101 D
+b11 B
+1$
