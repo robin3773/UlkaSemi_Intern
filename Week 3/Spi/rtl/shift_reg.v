@@ -1,7 +1,7 @@
 module shift_reg #(parameter BIT_LENGTH = 8)(
     input clk, 
     input reset_n, 
-    input shif_en, 
+    input shift_en, 
     input serial_in, 
     output serial_out
 );
@@ -11,7 +11,7 @@ module shift_reg #(parameter BIT_LENGTH = 8)(
         if(!reset_n)
             Q <= 'b0; 
         else 
-            Q <= shif_en? {serial_in, Q[BIT_LENGTH-1 : 1]}: Q; 
+            Q <= shift_en? {serial_in, Q[BIT_LENGTH-1 : 1]}: Q; 
     end
 
     assign serial_out = Q[0]; 
