@@ -6,7 +6,8 @@ module fsm(
 
     output shift_en, 
     output clear, 
-    output increament
+    output increament, 
+    output transaction_done
 
 );
 
