@@ -4,19 +4,15 @@
 `include "counter.v"
 `include "comparator.v"
 
-
 module spi_slave(
-    input clk, 
-    input reset_n, 
-    input ss, 
-    input sclk, 
-    input mosi,
+    input clk, reset_n, 
+    input ss, sclk, mosi,
     output miso
 ); 
 
 
-    reg transaction_done; 
-    reg miso; 
+    wire transaction_done; 
+    wire [2:0] count; 
 
     posedge_detect POSEDGE_DETECTOR(
         .clk(clk), 
@@ -54,9 +50,8 @@ module spi_slave(
         .ss(ss), 
         .shift_en(shift_en),
         .clear(clear), 
-        .increament(increament), 
+        .increament(increament),
         .transaction_done(transaction_done)
     ); 
-
 endmodule
 

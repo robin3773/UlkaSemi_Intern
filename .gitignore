@@ -1,1 +1,13 @@
-./Week [123456]/sim
+
+*.key
+*.log
+*.dump
+*.trn
+*.files
+*.dsn
+*.f
+*.pak
+*.tag
+*.lnx86
+Week 3/Spi/sim/
+*.env

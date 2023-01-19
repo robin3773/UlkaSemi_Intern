@@ -2,15 +2,14 @@ module fsm(
     input clk, 
     input reset_n,  
     input sclk_posedge, 
+  	input bit_count_eq_8,
     input ss, 
 
-    output shift_en, 
-    output clear, 
-    output increament, 
-    output transaction_done
-
+    output reg shift_en, 
+    output reg clear, 
+    output reg increament,
+    output reg transaction_done
 );
-
 
     reg [1:0] present_state, next_state; 
     parameter IDLE = 2'b00; 
@@ -21,7 +20,7 @@ module fsm(
     always @(*) begin
         begin: NSL
          case(present_state)
-            IDLE: next_state = !ss? TRANSFER: IDLE; 
+            IDLE: next_state = !ss? TRANSFER: IDLE;
             TRANSFER: next_state = !ss? (bit_count_eq_8? FINISH: TRANSFER) : IDLE; 
             FINISH: next_state = !ss? WAIT_SS_HIGH : IDLE;  
             WAIT_SS_HIGH: next_state = !ss? WAIT_SS_HIGH: IDLE; 
@@ -64,3 +63,5 @@ module fsm(
         else 
             present_state <= next_state; 
     end
+  
+endmodule 
