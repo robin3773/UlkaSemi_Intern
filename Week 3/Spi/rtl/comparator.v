@@ -1,4 +1,4 @@
-module cmprtr #(parameter BIT_LENGTH = 3) (
+module cmprtr #(parameter BIT_LENGTH = 4) (
     input [BIT_LENGTH-1:0] value1, 
     input [BIT_LENGTH-1:0] value2, 
     output is_equal

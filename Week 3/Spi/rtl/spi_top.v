@@ -1,9 +1,9 @@
-`include "posedge_detector.v"
+/* `include "posedge_detector.v"
 `include "shift_reg.v"
 `include "spi_fsm.v"
 `include "counter.v"
 `include "comparator.v"
-
+ */
 module spi_slave(
     input clk, reset_n, 
     input ss, sclk, mosi,
@@ -12,7 +12,7 @@ module spi_slave(
 
 
     wire transaction_done; 
-    wire [2:0] count; 
+    wire [3:0] count; 
 
     posedge_detect POSEDGE_DETECTOR(
         .clk(clk), 
@@ -39,7 +39,7 @@ module spi_slave(
 
     cmprtr COMPARE(
         .value1(count), 
-        .value2(3'b111), 
+        .value2(4'b1000), 
         .is_equal(bit_count_eq_8)
     ); 
 
@@ -47,7 +47,8 @@ module spi_slave(
         .clk(clk), 
         .reset_n(reset_n),
         .sclk_posedge(is_posedge), 
-        .ss(ss), 
+        .ss(ss),
+        .bit_count_eq_8(bit_count_eq_8),  
         .shift_en(shift_en),
         .clear(clear), 
         .increament(increament),
