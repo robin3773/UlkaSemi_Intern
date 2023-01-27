@@ -2,11 +2,13 @@
 // or browse Examples
 //`include "../rtl/spi_top.v"
 module spi_slave_tb; 
+
+  parameter FRAME_SIZE = 8;
   logic clk, reset_n, ss, sclk, mosi; 
   wire miso; 
 
-  logic [7:0] data_sent; 
-  logic [7:0] data_received = 8'h0; 
+  logic [FRAME_SIZE-1:0] data_sent; 
+  logic [FRAME_SIZE-1:0] data_received = 8'h0; 
   
   initial begin 
     clk <= 0; 
@@ -54,7 +56,7 @@ module spi_slave_tb;
   task send_receive_frame(input [7:0]data_sent); 
     ss <= 0; 
     wait_2(); 
-    for(int i = 0; i < 8; i++) begin
+    for(int i = 0; i < FRAME_SIZE; i++) begin
       sclk <= ~sclk; 
       mosi <= data_sent[i];
       data_received = {miso, data_received[7:1]}; 

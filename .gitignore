@@ -11,3 +11,27 @@
 *.lnx86
 Week 3/Spi/sim/
 *.env
+Week 4/sim/dump.vcd
+Week 4/sim/.simvision/dbrowser-bookmarks
+Week 4/sim/.simvision/schematic-bookmarks
+Week 4/sim/.simvision/source-bookmarks
+Week 4/sim/INCA_libs/irun.nc
+Week 4/sim/INCA_libs/irun.lnx86.10.20.nc/.ncrun.lock
+Week 4/sim/INCA_libs/irun.lnx86.10.20.nc/.ncv.lock
+Week 4/sim/INCA_libs/irun.lnx86.10.20.nc/.timestamp.ts
+Week 4/sim/INCA_libs/irun.lnx86.10.20.nc/cds.lib
+Week 4/sim/INCA_libs/irun.lnx86.10.20.nc/cdsrun.lib
+Week 4/sim/INCA_libs/irun.lnx86.10.20.nc/files.ts
+Week 4/sim/INCA_libs/irun.lnx86.10.20.nc/hdl.var
+Week 4/sim/INCA_libs/irun.lnx86.10.20.nc/hdlrun.var
+Week 4/sim/INCA_libs/irun.lnx86.10.20.nc/irun.args
+Week 4/sim/INCA_libs/irun.lnx86.10.20.nc/ncelab.args
+Week 4/sim/INCA_libs/irun.lnx86.10.20.nc/ncelab.hrd
+Week 4/sim/INCA_libs/irun.lnx86.10.20.nc/ncsim_restart.args
+Week 4/sim/INCA_libs/irun.lnx86.10.20.nc/ncsim.args
+Week 4/sim/INCA_libs/irun.lnx86.10.20.nc/ncvlog.args
+Week 4/sim/INCA_libs/irun.lnx86.10.20.nc/UVMHOME
+Week 4/sim/INCA_libs/irun.lnx86.10.20.nc/cadence_11120/irun.args
+Week 4/sim/INCA_libs/irun.lnx86.10.20.nc/cadence_11120/ncsim.args
+Week 4/sim/INCA_libs/irun.lnx86.10.20.nc/cadence_11185/irun.args
+Week 4/sim/INCA_libs/irun.lnx86.10.20.nc/cadence_11185/ncsim.args
