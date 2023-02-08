@@ -1,8 +1,3 @@
-`include "spi_slave.v"
-`include "shift_reg.v"
-`include "alu.v"
-`include "alu_controller.v"
-
 module alu_top(
     input clk, 
     input reset_n, 

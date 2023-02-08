@@ -1,9 +1,3 @@
-`include "posedge_detector.v"
-`include "shift_reg.v"
-`include "spi_controller.v"
-`include "counter.v"
-`include "comparator.v"
-
 module spi_slave#(parameter BIT_LENGTH = 20)(
     input clk, reset_n, 
     input ss, sclk, mosi,
