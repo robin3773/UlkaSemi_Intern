@@ -1,9 +1,9 @@
-module counter (
+module counter #(parameter COUNT_LENGTH = 6(
     input clk, 
     input reset_n, 
     input clear, 
     input increament, 
-  	output reg [4:0] count
+  	output reg [COUNT_LENGTH-1:0] count
 ); 
 
     always @(posedge clk or negedge reset_n) begin 

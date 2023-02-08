@@ -2,7 +2,7 @@ module spi_fsm(
     input clk, 
     input reset_n,  
     input sclk_posedge, 
-  	input bit_count_eq_20,
+  	input bit_count_eq_32,
     input ss, 
 
     output reg shift_en, 
@@ -21,7 +21,7 @@ module spi_fsm(
         begin: NSL
          case(present_state)
             IDLE: next_state = !ss? TRANSFER: IDLE;
-            TRANSFER: next_state = !ss? (bit_count_eq_20? FINISH: TRANSFER) : IDLE; 
+            TRANSFER: next_state = !ss? (bit_count_eq_32? FINISH: TRANSFER) : IDLE; 
             FINISH: next_state = !ss? WAIT_SS_HIGH : IDLE;  
             WAIT_SS_HIGH: next_state = !ss? WAIT_SS_HIGH: IDLE; 
          endcase 

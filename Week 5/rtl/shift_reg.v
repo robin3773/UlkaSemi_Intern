@@ -1,4 +1,4 @@
-module shift_reg #(parameter BIT_LENGTH = 20)(
+module shift_reg #(parameter BIT_LENGTH = 32)(
     input clk, 
     input reset_n, 
     input shift_en,

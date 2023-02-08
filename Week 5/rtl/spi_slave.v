@@ -1,15 +1,14 @@
-module spi_slave#(parameter BIT_LENGTH = 20)(
+module spi_slave#(parameter BIT_LENGTH = 32, parameter COUNT_LENGTH = 6)(
     input clk, reset_n, 
     input ss, sclk, mosi,
 	input serial_in, 
     
     output miso, 
-	output shift_en, 
     output transaction_done, 
 	output serial_out
 ); 
   
-    wire [4:0] count; 
+    wire [COUNT_LENGTH-1:0] count; 
 
     posedge_detect POSEDGE_DETECTOR(
         .clk(clk), 
@@ -30,17 +29,18 @@ module spi_slave#(parameter BIT_LENGTH = 20)(
 
     cmprtr COMPARE(
         .value1(count), 
-        .value2(5'b10100), 
+        .value2(6'b100000), 
 
-        .is_equal(bit_count_eq_20)
+        .is_equal(bit_count_eq_32)
     ); 
+
 
     fsm CONTROLLER(
         .clk(clk), 
         .reset_n(reset_n),
         .sclk_posedge(is_posedge), 
         .ss(ss),
-        .bit_count_eq_20(bit_count_eq_20),  
+        .bit_count_eq_32(bit_count_eq_32),  
         .shift_en(shift_en),
         .clear(clear), 
         .increament(increament),
