@@ -2,7 +2,7 @@ module mem_controller(
     input clk, 
     input reset_n, 
     input transaction_done,
-    input read_write; 
+    input read_write,
 
     output reg mem_en,
     output reg mem_wr_en, 
@@ -15,7 +15,7 @@ module mem_controller(
     reg [2:0] present_state, next_state; 
     parameter IDLE          = 3'b000; 
     parameter ADDR_LOAD     = 3'b001; 
-  	parameter MEM_READ      = 3'b010;
+    parameter MEM_READ      = 3'b010;
     parameter WAIT_FOR_DATA = 3'b011;
     parameter DATA_LOAD     = 3'B100; 
     parameter MEM_WRITE     = 3'b101; 
@@ -39,7 +39,7 @@ module mem_controller(
                                     mem_rd_en       = 0; 
                                     mem_wr_en       = 0;  
                                     spi_load_en     = 0; 
-                                    addr_reg_write  = 0; 
+                                    addr_reg_write  = transaction_done; 
                                     data_reg_write  = 0;  
                                 end
                 ADDR_LOAD            : begin
@@ -47,7 +47,7 @@ module mem_controller(
                                     mem_rd_en       = 0; 
                                     mem_wr_en       = 0;  
                                     spi_load_en     = 0; 
-                                    addr_reg_write  = 1; 
+                                    addr_reg_write  = transaction_done; 
                                     data_reg_write  = 0;  
                                 end 
 
@@ -66,7 +66,7 @@ module mem_controller(
                                     mem_wr_en       = 0;  
                                     spi_load_en     = 0; 
                                     addr_reg_write  = 0; 
-                                    data_reg_write  = 1;            
+                                    data_reg_write  = read_write;            
                                 end
 
                 MEM_WRITE       : begin 
@@ -82,9 +82,9 @@ module mem_controller(
                                     mem_en          = 1;
                                     mem_rd_en       = 1; 
                                     mem_wr_en       = 0;  
-                                    spi_load_en     = 1; 
+                                    spi_load_en     = ~read_write; 
                                     addr_reg_write  = 0; 
-                                    data_reg_write  = 1;   
+                                    data_reg_write  = ~read_write;   
                                 end 
             endcase
         end 

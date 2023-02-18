@@ -7,6 +7,7 @@ module memory_top #(parameter DATA_LENGTH = 32, parameter ADDRESS_LENGTH = 4)(
 ); 
 
     wire [DATA_LENGTH-1:0] spi_reg_out, data_reg_out, addr_reg_out, ram_data_out;
+	wire [3:0]address;
 
 
     spi_slave SPI_SLAVE(
@@ -15,12 +16,12 @@ module memory_top #(parameter DATA_LENGTH = 32, parameter ADDRESS_LENGTH = 4)(
         .ss(ss), 
         .sclk(sclk), 
         .mosi(mosi),
- 		    .serial_in(spi_reg_out[0]),
+ 		 .serial_in(spi_reg_out[0]),
 
         .miso(miso),
-		    .shift_en(shift_en), 
+		.shift_en(shift_en), 
         .transaction_done(transaction_done),
-		    .serial_out(instr_serial_in)
+		.serial_out(instr_serial_in)
     ); 
 
     shift_reg SPI_REG(
@@ -57,13 +58,14 @@ module memory_top #(parameter DATA_LENGTH = 32, parameter ADDRESS_LENGTH = 4)(
     );
 
     DFFRAM_2048 RAM_MODULE(
-        .clk(CLK), 
+        .CLK(clk), 
         .EN(mem_en), 
         .WE(mem_wr_en), 
         .RE(mem_rd_en),
         .Di(data_reg_out),
-        .Do(ram_data_out)
-    )
+        .Do(ram_data_out),
+		.A(address)
+    );
 
     mem_controller MEM_CONTROLLER(
         .clk(clk), 
@@ -78,7 +80,8 @@ module memory_top #(parameter DATA_LENGTH = 32, parameter ADDRESS_LENGTH = 4)(
         .addr_reg_write(addr_reg_write), 
         .data_reg_write(data_reg_write)
     ); 
-
-    assign address = addr_reg_out[3:0]; 
+	
+	assign read_write = addr_reg_out[0]; 
+    assign address = addr_reg_out[4:1]; 
 
     endmodule

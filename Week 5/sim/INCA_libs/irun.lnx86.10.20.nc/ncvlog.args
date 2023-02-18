@@ -1,0 +1,26 @@
+//
+// File created by:  irun
+// Do not modify this file
+//
+-XLMODE
+./INCA_libs/irun.lnx86.10.20.nc
+-RUNMODE
+../rtl/comparator.v
+../rtl/counter.v
+../rtl/mem_controller.v
+../rtl/memory_top.v
+../rtl/posedge_detector.v
+../rtl/ram.v
+../rtl/shift_reg.v
+../rtl/spi_controller.v
+../rtl/spi_slave.v
+../test/memory_top_tb.sv
+-CDSLIB
+./INCA_libs/irun.lnx86.10.20.nc/cdsrun.lib
+-HDLVAR
+./INCA_libs/irun.lnx86.10.20.nc/hdlrun.var
+-MESSAGES
+-UPDATE
+-XLLIBSTORE
+./INCA_libs/irun.lnx86.10.20.nc/xllibs
+-ALLOWUNBOUND

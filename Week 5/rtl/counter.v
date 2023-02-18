@@ -1,4 +1,4 @@
-module counter #(parameter COUNT_LENGTH = 6(
+module counter #(parameter COUNT_LENGTH = 6)(
     input clk, 
     input reset_n, 
     input clear, 

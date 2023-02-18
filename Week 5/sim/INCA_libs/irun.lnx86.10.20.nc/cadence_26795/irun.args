@@ -1,0 +1,12 @@
+//
+// File created by:  irun
+// Do not modify this file
+//
+-gui
+-access
++rwc
+-timescale
+1ns/1ns
+-f
+filelist.f
+-s

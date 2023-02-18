@@ -7,7 +7,7 @@ module DFFRAM_2048 #(parameter ADDRESS_LENGTH = 4, parameter DATA_LENGTH = 32)(
     output reg [DATA_LENGTH-1:0] Do
 );
 
-    reg [(DATA_LENGTH) -1:0] RAM[2047 : 0]; 
+    reg [(DATA_LENGTH) -1:0] RAM[15 : 0]; 
 
     always @(posedge CLK) begin
         if(EN) begin
