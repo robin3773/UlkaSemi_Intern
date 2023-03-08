@@ -1,7 +1,7 @@
 module mem_controller(
     input clk, 
     input reset_n, 
-    input transaction_done,
+    input transaction_eq_4,
     input read_write,
 
     output reg mem_en,
@@ -9,7 +9,8 @@ module mem_controller(
     output reg mem_rd_en,  
     output reg spi_load_en, 
     output reg addr_reg_write, 
-    output reg data_reg_write
+    output reg data_reg_write, 
+    output reg transaction_count_clear
 ); 
 
     reg [2:0] present_state, next_state; 
@@ -23,9 +24,9 @@ module mem_controller(
     always @(*) begin
         begin: NSL
             case(present_state)
-                IDLE            : next_state = transaction_done ? ADDR_LOAD: IDLE; 
+                IDLE            : next_state = transaction_eq_4 ? ADDR_LOAD: IDLE; 
                 ADDR_LOAD       : next_state = read_write? WAIT_FOR_DATA: MEM_READ; 
-                WAIT_FOR_DATA   : next_state = transaction_done? DATA_LOAD: WAIT_FOR_DATA; 
+                WAIT_FOR_DATA   : next_state = transaction_eq_4? DATA_LOAD: WAIT_FOR_DATA; 
                 DATA_LOAD       : next_state = MEM_WRITE; 
                 MEM_WRITE       : next_state = IDLE; 
                 MEM_READ        : next_state = IDLE; 
@@ -39,16 +40,18 @@ module mem_controller(
                                     mem_rd_en       = 0; 
                                     mem_wr_en       = 0;  
                                     spi_load_en     = 0; 
-                                    addr_reg_write  = transaction_done; 
+                                    addr_reg_write  = transaction_eq_4; 
                                     data_reg_write  = 0;  
+                                    transaction_count_clear = 0; 
                                 end
                 ADDR_LOAD            : begin
                                     mem_en          = 0;
                                     mem_rd_en       = 0; 
                                     mem_wr_en       = 0;  
                                     spi_load_en     = 0; 
-                                    addr_reg_write  = transaction_done; 
+                                    addr_reg_write  = transaction_eq_4; 
                                     data_reg_write  = 0;  
+                                    transaction_count_clear = 1; 
                                 end 
 
                 WAIT_FOR_DATA   : begin
@@ -57,7 +60,8 @@ module mem_controller(
                                     mem_wr_en       = 0;  
                                     spi_load_en     = 0; 
                                     addr_reg_write  = 0; 
-                                    data_reg_write  = 0;            
+                                    data_reg_write  = 0; 
+                                    transaction_count_clear = 0;         
                                 end
 
                 DATA_LOAD   : begin
@@ -66,7 +70,8 @@ module mem_controller(
                                     mem_wr_en       = 0;  
                                     spi_load_en     = 0; 
                                     addr_reg_write  = 0; 
-                                    data_reg_write  = read_write;            
+                                    data_reg_write  = read_write;  
+                                    transaction_count_clear = 1;           
                                 end
 
                 MEM_WRITE       : begin 
@@ -76,6 +81,7 @@ module mem_controller(
                                     spi_load_en     = 0; 
                                     addr_reg_write  = 0; 
                                     data_reg_write  = 0;  
+                                    transaction_count_clear = 1; 
                                 end 
 
                 MEM_READ       : begin
@@ -84,7 +90,8 @@ module mem_controller(
                                     mem_wr_en       = 0;  
                                     spi_load_en     = ~read_write; 
                                     addr_reg_write  = 0; 
-                                    data_reg_write  = ~read_write;   
+                                    data_reg_write  = ~read_write;  
+                                    transaction_count_clear = 1;  
                                 end 
             endcase
         end 

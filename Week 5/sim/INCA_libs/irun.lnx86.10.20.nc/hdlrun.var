@@ -1,4 +1,3 @@
-include ../../../../../../../home/buet/hdl.var
 DEFINE LANG_MAP (\
 	.v => verilog,\
 	.vp => verilog,\
@@ -71,3 +70,5 @@ define VIEW_MAP ( $VIEW_MAP \
 , .vams => vams \
 , .VAMS => VAMS \
 )
+define ELAB_SNAPSHOT
+define SNAPSHOT worklib.memory_top_tb:sv

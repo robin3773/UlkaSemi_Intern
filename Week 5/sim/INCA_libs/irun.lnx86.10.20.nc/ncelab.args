@@ -14,4 +14,6 @@
 ./INCA_libs/irun.lnx86.10.20.nc/cds.lib
 -HDLVAR
 ./INCA_libs/irun.lnx86.10.20.nc/hdl.var
+-WORK
+worklib
 -HASXLMODE

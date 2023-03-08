@@ -1,1 +1,2 @@
 include ../../../../../../../home/buet/cds.lib
+define worklib ../worklib

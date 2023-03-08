@@ -1,6 +1,6 @@
 module memory_top_tb; 
 
-  parameter FRAME_SIZE = 32;
+  parameter FRAME_SIZE = 8;
   logic clk, reset_n; 
   logic ss, sclk, mosi; 
 
@@ -31,21 +31,35 @@ module memory_top_tb;
 		//send_receive_frame({$random, 4'b0000, 1'b1}); 
 		wait_2(); 
 
-	  	repeat(2) begin
-			address = 4'b0101; 
+	  	for(int i = 0; i < 10; i++) begin
+			address = i; 
 			address_frame = {27'b0, address, 1'b1}; 
-			data_sent = 32'HDADA; 
+			data_sent = i; 
 			
-			send_receive_frame(address_frame); 
+			//Sending adress_frame
+			send_receive_frame(address_frame[7:0]); 
 			wait_2(); 
-
-			send_receive_frame(data_sent);
-			wait_2(); 
+			//send_receive_frame(address_frame[15:8]); 
+			//wait_2(); 
+			//send_receive_frame(address_frame[23:16]); 
+			//wait_2(); 
+			//send_receive_frame(address_frame[31:24]); 
+			//wait_2(); 
+			
+			//Sending data frame
+			//send_receive_frame(data_sent[7:0]);
+			//wait_2(); 
+			//send_receive_frame(data_sent[15:8]);
+			//wait_2(); 
+			//send_receive_frame(data_sent[23:16]);
+			//wait_2(); 
+			//send_receive_frame(data_sent[31:24]);
+			//wait_2(); 
 	
-			address_frame[0] = 1'b0; 
-			send_receive_frame(address_frame); 
+			//address_frame[0] = 1'b0; 
+			//send_receive_frame(address_frame); 
 			//$display("[%4t] Data Received = %8h", $time, data_received); 
-			wait_2(); 
+			//wait_2(); 
 			///send_receive_frame(address_frame); 
 			//check_case(); 
 		end 

@@ -1,8 +1,8 @@
-module spi_slave#(parameter BIT_LENGTH = 32, parameter COUNT_LENGTH = 6)(
+module spi_slave#(parameter BIT_LENGTH = 8, parameter COUNT_LENGTH = 6)(
     input clk, reset_n, 
     input ss, sclk, mosi,
 	input serial_in, 
-	
+
 	output shift_en,     
     output miso, 
     output transaction_done, 
@@ -28,12 +28,13 @@ module spi_slave#(parameter BIT_LENGTH = 32, parameter COUNT_LENGTH = 6)(
 
         .count(count)
     ); 
+    
 
     cmprtr COMPARE(
         .value1(count), 
-        .value2(6'b100000), 
+        .value2(6'b001000), 
 
-        .is_equal(bit_count_eq_32)
+        .is_equal(bit_count_eq_8)
     ); 
 
 
@@ -42,7 +43,7 @@ module spi_slave#(parameter BIT_LENGTH = 32, parameter COUNT_LENGTH = 6)(
         .reset_n(reset_n),
         .sclk_posedge(is_posedge), 
         .ss(ss),
-        .bit_count_eq_32(bit_count_eq_32),  
+        .bit_count_eq_8(bit_count_eq_8),  
         .shift_en(shift_en),
         .clear(clear), 
         .increament(increament),
