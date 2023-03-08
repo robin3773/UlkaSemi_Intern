@@ -1,0 +1,10 @@
+//
+// File created by:  irun
+// Do not modify this file
+//
+-sysv
+-access
++rwc
+../test/alu_top_tb.sv
+-gui
+-s

@@ -1,0 +1,103 @@
+$date
+    Feb  8, 2023  18:01:34
+$end
+$version
+    TOOL:	ncsim	10.20-s100
+$end
+$timescale
+    1 ns
+$end
+
+$scope module alu_top_tb $end
+$var parameter 32 !    FRAME_SIZE  $end
+
+$scope module test_alu $end
+$var parameter 32 "    BIT_LENGTH  $end
+$var parameter 32 #    INSTR_LENGTH  $end
+$var parameter 32 $    OPCODE_LENGTH  $end
+$upscope $end
+
+
+$scope module DUT $end
+
+$scope module SPI_SLAVE $end
+$var parameter 32 %    BIT_LENGTH  $end
+
+$scope module COMPARE $end
+$var parameter 32 &    BIT_LENGTH  $end
+$upscope $end
+
+
+$scope module CONTROLLER $end
+$var parameter  2 '    IDLE  $end
+$var parameter  2 (    TRANSFER  $end
+$var parameter  2 )    FINISH  $end
+$var parameter  2 *    WAIT_SS_HIGH  $end
+$upscope $end
+
+$upscope $end
+
+
+$scope module INSTR_REG $end
+$var parameter 32 +    BIT_LENGTH  $end
+$upscope $end
+
+
+$scope module RESULT_REG $end
+$var parameter 32 ,    BIT_LENGTH  $end
+$upscope $end
+
+
+$scope module ALU $end
+$var parameter 32 -    BIT_LENGTH  $end
+$var parameter 32 .    INSTR_LENGTH  $end
+$var parameter 32 /    OPCODE_LENGTH  $end
+$upscope $end
+
+
+$scope module ALU_CONTROLLER $end
+$var parameter  2 0    TRANSACTION  $end
+$var parameter  2 1    LOAD  $end
+$var parameter  2 2    EXEC  $end
+$var parameter  2 3    REG_WRITE  $end
+$upscope $end
+
+$upscope $end
+
+$upscope $end
+
+
+$scope module spi_fsm $end
+$var parameter  2 4    IDLE  $end
+$var parameter  2 5    TRANSFER  $end
+$var parameter  2 6    FINISH  $end
+$var parameter  2 7    WAIT_SS_HIGH  $end
+$upscope $end
+
+$enddefinitions $end
+$dumpvars
+b11 7
+b10 6
+b1 5
+b0 4
+b11 3
+b10 2
+b1 1
+b0 0
+b100 /
+b10100 .
+b1000 -
+b10100 ,
+b10100 +
+b11 *
+b10 )
+b1 (
+b0 '
+b101 &
+b10100 %
+b100 $
+b10100 #
+b1000 "
+b10100 !
+$end
+#34413
