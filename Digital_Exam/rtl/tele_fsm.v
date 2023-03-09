@@ -6,9 +6,10 @@ module tele_fsm(
     input dial_count_5, 
     input call_duration_count_250,
 
+    output reg dial_tone, call_ended, 
     output reg dial_counter_clear, dial_counter_increament, 
     output reg call_counter_clear, call_counter_increament,
-    output reg  call_timeout, in_call, dial_timeout); 
+    output reg call_timeout, in_call, dial_timeout); 
 
 
     parameter IDLE          = 3'b000; 
@@ -30,8 +31,10 @@ module tele_fsm(
                 IN_CALL         : begin
                                     if(call_duration_count_250)
                                         next_state = CALL_TIMEOUT;
-                                    if(end_call)
+                                    else if(end_call)
                                         next_state = END_CALL; 
+                                    else 
+                                    	next_state = IN_CALL;
                                 end
                 END_CALL        : next_state = IDLE; 
                 CALL_TIMEOUT    : next_state = cancel ? IDLE: CALL_TIMEOUT; 
@@ -48,15 +51,19 @@ module tele_fsm(
                                 dial_timeout            = 0; 
                                 in_call                 = 0; 
                                 call_timeout            = 0; 
+                                dial_tone               = 0; 
+                                call_ended              = 0; 
                 end 
                 DIAL        :  begin
-                                dial_counter_clear      = 0; 
+                                dial_counter_clear      = dial_count_5; 
                                 dial_counter_increament = 1;
                                 call_counter_clear      = 1; 
                                 call_counter_increament = 0; 
                                 dial_timeout            = 0; 
                                 in_call                 = 0; 
                                 call_timeout            = 0; 
+                                dial_tone               = 1; 
+                                call_ended              = 0; 
                 end 
                 DIAL_TIMEOUT: begin
                                 dial_counter_clear      = 1; 
@@ -66,15 +73,19 @@ module tele_fsm(
                                 dial_timeout            = 1; 
                                 in_call                 = 0; 
                                 call_timeout            = 0; 
+                                dial_tone               = 0; 
+                                call_ended              = 0; 
                 end 
                 IN_CALL     :  begin
-                                dial_counter_clear      = 0; 
+                                dial_counter_clear      = 1; 
                                 dial_counter_increament = 1;
-                                call_counter_clear      = 0; 
+                                call_counter_clear      = call_duration_count_250; 
                                 call_counter_increament = 1; 
                                 dial_timeout            = 0; 
                                 in_call                 = 1; 
                                 call_timeout            = 0; 
+                                dial_tone               = 0; 
+                                call_ended              = 0; 
                 end 
                 CALL_TIMEOUT: begin
                                 dial_counter_clear      = 1; 
@@ -84,6 +95,8 @@ module tele_fsm(
                                 dial_timeout            = 0; 
                                 in_call                 = 0; 
                                 call_timeout            = 1; 
+                                dial_tone               = 0; 
+                                call_ended              = 1; 
                 end 
                 END_CALL     :  begin
                                 dial_counter_clear      = 1; 
@@ -93,6 +106,8 @@ module tele_fsm(
                                 dial_timeout            = 0; 
                                 in_call                 = 0; 
                                 call_timeout            = 0; 
+                                dial_tone               = 0; 
+                                call_ended              = 1; 
                 end 
             endcase
         end

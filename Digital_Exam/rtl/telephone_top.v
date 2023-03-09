@@ -6,7 +6,9 @@ module telephone_top #(parameter DATA_WIDTH = 32, parameter ADDR_WIDTH = 32)(
     input pickup_call, 
 
     output pready, 
-    output [DATA_WIDTH-1:0] prdata
+    output [DATA_WIDTH-1:0] prdata,
+    output dial_tone, dial_timeout, in_call, call_ended, call_timeout
+
 ); 
 
 
@@ -23,7 +25,6 @@ module telephone_top #(parameter DATA_WIDTH = 32, parameter ADDR_WIDTH = 32)(
     wire [ADDR_WIDTH-1:0] addr; 
     wire [DATA_WIDTH-1:0] cr_d, cr_q, stat_d, stat_q, cntct_d, cntct_q, cdr_d, cdr_q; 
     wire cr_wr_en, cntct_wr_en; 
-    wire dial_timeout, in_call, call_timeout; 
 
     assign cr_wr_en = wr_en & (addr == 32'h0) ; 
     assign cr_d = cr_wr_en ? {29'b0, wr_data[2:0]} : cr_q; 
@@ -72,7 +73,9 @@ module telephone_top #(parameter DATA_WIDTH = 32, parameter ADDR_WIDTH = 32)(
         .valid_cntct(~valid_cntct),
         .dial_count_5(dial_count_5), 
         .call_duration_count_250(call_duration_count_250), 
-
+        
+        .dial_tone(dial_tone), 
+        .call_ended(call_ended),
         .dial_counter_clear(dial_counter_clear), 
         .dial_counter_increament(dial_counter_increament), 
         .call_counter_clear(call_counter_clear), 
@@ -106,7 +109,7 @@ module telephone_top #(parameter DATA_WIDTH = 32, parameter ADDR_WIDTH = 32)(
         .is_equal(dial_count_5)
     );
 
-    comparator #(8) u_dial_comp_250(
+    comparator #(8) u_call_comp_250(
         .value1(call_duration_count),
         .value2(8'b11111010),
         .is_equal(call_duration_count_250)

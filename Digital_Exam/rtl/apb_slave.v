@@ -20,7 +20,7 @@ module apb_slave #(parameter DATA_WIDTH = 32, parameter ADDR_WIDTH = 32)(
     parameter ACCESS = 2'b11; 
 
     reg [1:0] next_state, present_state; 
-    reg [2:0] control; 
+    reg [5:0] control; 
 
     always @(*) begin
         begin: NSL
